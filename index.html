@@ -28,7 +28,7 @@
 <h2>In short</h2>
 <ul>
   <li>Crate Sort has no accounts. It never asks for your name, email address or age.</li>
-  <li>To show ads and to see how the levels play, the game sends Google data about your phone and how you play: an advertising ID, an app ID, your IP address (which gives a rough location), and the result of each try at a level.</li>
+  <li>To show ads and to see how the levels play, the game sends Google data about your phone and how you play: an advertising ID, an app ID, your IP address (which gives a rough location), and the result of each attempt at a level.</li>
   <li>In Europe (the EEA, the UK and Switzerland), Google first asks for your consent. Analytics runs only if you agree.</li>
   <li>In Indonesia, ads are never personalised and analytics never uses your advertising ID.</li>
   <li>The game is for players aged 13 and over.</li>
@@ -58,16 +58,16 @@
 <p>Firebase Analytics shows us how the game is played, so that we can find levels that are too hard and tune the game's settings. Google runs Firebase on our behalf (as our processor), under the <a href="https://firebase.google.com/terms/data-processing-terms">Firebase data processing terms</a>. Firebase receives:</p>
 <ul>
   <li><strong>an app-instance ID</strong>: a random ID made when the game is installed. A new one is made if you reinstall.</li>
-  <li><strong>your advertising ID</strong>, except in Indonesia, and in Europe only with your consent;</li>
+  <li><strong>your advertising ID</strong>, except in Indonesia, and in Europe only once you have agreed to analytics;</li>
   <li>your IP address, from which Google works out your country, region and city;</li>
   <li>information about your phone: model, Android version and language;</li>
   <li>how you installed the game, for example which ad campaign led you to it;</li>
-  <li>Firebase's own events: first opening, sessions and time spent, app updates, and purchases (the item and its price);</li>
-  <li><strong>each try at a level</strong>: the level (or the daily level's day), how the try ended (cleared, restarted or left), how long it lasted, the number of taps, undos, refills and jams, which try at that level it was, and the app and level-set versions;</li>
-  <li>a few game events: pressing refill or boost (and whether an ad played), the No Ads offer being shown or tapped, a theme or tune being unlocked or chosen, opening the game from the reminder, and the revenue from each ad shown (its value, currency and format);</li>
-  <li>your settings: piece marking, sound-cue set, theme, tune, whether you own No Ads, and whether the reminder is on.</li>
+  <li>Firebase's own events: first opening, sessions and time spent, app updates, ads shown, and purchases (the item and its price);</li>
+  <li><strong>each attempt at a level</strong>: the level (or the daily level's day), how the attempt ended (cleared, restarted or left), how long it lasted, the number of taps, undos, undo refills and jams, which attempt at that level it was, and the app and level-set versions;</li>
+  <li>a few game events: refilling undos or pressing boost (and whether an ad played), the No Ads card being shown or tapped, a theme or tune being unlocked or chosen, opening the game from the reminder, and the revenue from each ad shown (its value, currency and format);</li>
+  <li>your settings: piece marking, cue set, theme, tune, whether you own No Ads, and whether the reminder is on.</li>
 </ul>
-<p>At most once a day, the game also asks Firebase Remote Config for updated game settings. That request carries a Firebase installation ID, the app version and your phone's language and region settings. In Europe it is made only once you have agreed to analytics.</p>
+<p>At most once a day, the game also asks Firebase Remote Config for updated game settings. That request carries a Firebase installation ID, the app-instance ID, the app version, your settings listed above, and your phone's language, region and time zone. In Europe it is made only once you have agreed to analytics.</p>
 <p>Each day, Firebase copies the analytics data into our own Google Cloud project (BigQuery), where we read it.</p>
 
 <h3 id="play">Google Play: purchases</h3>
@@ -118,7 +118,7 @@
   <li>withdraw your consent (in Europe, through <em>Privacy choices</em>);</li>
   <li>where Indonesian law gives you the right, claim compensation for a breach of these rules.</li>
 </ul>
-<p><strong>How.</strong> Email us from settings › <em>Contact</em>, which puts your app-instance ID in the message. We cannot tell who a player is without it. With it, we can find, copy or delete everything Firebase and our BigQuery project hold under that ID. Requests are free. We confirm and act on them within 3 working days (3×24 hours), and if something takes longer, such as preparing a copy, we tell you when it will be ready.</p>
+<p><strong>How.</strong> Email us from settings › <em>Contact</em>, which puts your app-instance ID in the message. We cannot tell who a player is without it. With it, we can find, copy or delete everything Firebase and our BigQuery project hold under that ID. Requests are free. We confirm and act on them within 3×24 hours (72 hours), and if something takes longer, such as preparing a copy, we tell you when it will be ready.</p>
 <p><strong>Data Google holds as a controller</strong> (AdMob, Google Play) is not visible to us. Google's own tools reach it: delete or reset your advertising ID as above, and see <a href="https://myadcenter.google.com/">My Ad Center</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 <p><strong>Complaints.</strong> Please write to us first. You may also complain to a regulator: in Indonesia, the personal data protection agency once it is formed and, until then, the Ministry of Communication and Digital Affairs (Komdigi); in Europe, the data protection authority where you live.</p>
 
@@ -200,16 +200,16 @@
 <p>Firebase Analytics menunjukkan kepada kami cara game dimainkan, agar kami dapat menemukan level yang terlalu sulit dan menyetel pengaturan game. Google menjalankan Firebase atas nama kami (sebagai Prosesor Data Pribadi kami), berdasarkan <a href="https://firebase.google.com/terms/data-processing-terms">ketentuan pemrosesan data Firebase</a>. Firebase menerima:</p>
 <ul>
   <li><strong>ID instance aplikasi</strong>: ID acak yang dibuat saat game dipasang. ID baru dibuat jika Anda memasang ulang.</li>
-  <li><strong>ID iklan Anda</strong>, kecuali di Indonesia, dan di Eropa hanya dengan persetujuan Anda;</li>
+  <li><strong>ID iklan Anda</strong>, kecuali di Indonesia, dan di Eropa hanya setelah Anda menyetujui analitik;</li>
   <li>alamat IP Anda, yang dipakai Google untuk mengetahui negara, wilayah, dan kota Anda;</li>
   <li>informasi tentang ponsel Anda: model, versi Android, dan bahasa;</li>
   <li>cara Anda memasang game, misalnya kampanye iklan mana yang membawa Anda ke game ini;</li>
-  <li>peristiwa bawaan Firebase: pembukaan pertama, sesi dan lama bermain, pembaruan aplikasi, dan pembelian (barang dan harganya);</li>
-  <li><strong>setiap percobaan di sebuah level</strong>: levelnya (atau hari level harian), cara percobaan berakhir (selesai, diulang, atau ditinggalkan), lamanya, jumlah ketukan, undo, isi ulang, dan macet, percobaan keberapa di level itu, serta versi aplikasi dan versi set level;</li>
-  <li>beberapa peristiwa game: menekan isi ulang atau boost (dan apakah iklan diputar), penawaran No Ads ditampilkan atau diketuk, tema atau lagu dibuka atau dipilih, membuka game dari pengingat, dan pendapatan dari setiap iklan yang ditampilkan (nilai, mata uang, dan formatnya);</li>
-  <li>pengaturan Anda: penanda keping, set suara, tema, lagu, apakah Anda memiliki No Ads, dan apakah pengingat aktif.</li>
+  <li>peristiwa bawaan Firebase: pembukaan pertama, sesi dan lama bermain, pembaruan aplikasi, iklan yang ditampilkan, dan pembelian (barang dan harganya);</li>
+  <li><strong>setiap percobaan di sebuah level</strong>: levelnya (atau hari level harian), cara percobaan berakhir (selesai, diulang, atau ditinggalkan), lamanya, jumlah ketukan, undo, isi ulang undo, dan macet, percobaan keberapa di level itu, serta versi aplikasi dan versi set level;</li>
+  <li>beberapa peristiwa game: mengisi ulang undo atau menekan boost (dan apakah iklan diputar), kartu No Ads ditampilkan atau diketuk, tema atau lagu dibuka atau dipilih, membuka game dari pengingat, dan pendapatan dari setiap iklan yang ditampilkan (nilai, mata uang, dan formatnya);</li>
+  <li>pengaturan Anda: penanda keping, set isyarat suara, tema, lagu, apakah Anda memiliki No Ads, dan apakah pengingat aktif.</li>
 </ul>
-<p>Paling sering sekali sehari, game juga meminta pengaturan game terbaru dari Firebase Remote Config. Permintaan itu membawa ID instalasi Firebase, versi aplikasi, serta pengaturan bahasa dan wilayah ponsel Anda. Di Eropa, permintaan ini hanya dibuat setelah Anda menyetujui analitik.</p>
+<p>Paling sering sekali sehari, game juga meminta pengaturan game terbaru dari Firebase Remote Config. Permintaan itu membawa ID instalasi Firebase, ID instance aplikasi, versi aplikasi, pengaturan Anda yang disebut di atas, serta bahasa, wilayah, dan zona waktu ponsel Anda. Di Eropa, permintaan ini hanya dibuat setelah Anda menyetujui analitik.</p>
 <p>Setiap hari, Firebase menyalin data analitik ke proyek Google Cloud kami sendiri (BigQuery), tempat kami membacanya.</p>
 
 <h3 id="id-play">Google Play: pembelian</h3>
@@ -260,7 +260,7 @@
   <li>menarik persetujuan Anda (di Eropa, melalui <em>Privacy choices</em>);</li>
   <li>menuntut ganti rugi atas pelanggaran aturan ini, sesuai hak yang diberikan hukum Indonesia.</li>
 </ul>
-<p><strong>Caranya.</strong> Kirim email dari pengaturan › <em>Contact</em>, yang memasukkan ID instance aplikasi Anda ke dalam pesan. Tanpa ID itu kami tidak dapat mengetahui siapa seorang pemain. Dengan ID itu, kami dapat menemukan, menyalin, atau menghapus semua yang disimpan Firebase dan proyek BigQuery kami dengan ID tersebut. Permintaan tidak dipungut biaya. Kami mengonfirmasi dan menindaklanjutinya dalam 3 hari kerja (3×24 jam), dan jika ada yang memerlukan waktu lebih lama, seperti menyiapkan salinan, kami memberi tahu kapan siap.</p>
+<p><strong>Caranya.</strong> Kirim email dari pengaturan › <em>Contact</em>, yang memasukkan ID instance aplikasi Anda ke dalam pesan. Tanpa ID itu kami tidak dapat mengetahui siapa seorang pemain. Dengan ID itu, kami dapat menemukan, menyalin, atau menghapus semua yang disimpan Firebase dan proyek BigQuery kami dengan ID tersebut. Permintaan tidak dipungut biaya. Kami mengonfirmasi dan menindaklanjutinya dalam 3×24 jam, dan jika ada yang memerlukan waktu lebih lama, seperti menyiapkan salinan, kami memberi tahu kapan siap.</p>
 <p><strong>Data yang disimpan Google sebagai pengendali</strong> (AdMob, Google Play) tidak dapat kami lihat. Alat Google sendiri dapat menjangkaunya: hapus atau reset ID iklan Anda seperti di atas, dan lihat <a href="https://myadcenter.google.com/?hl=id">Pusat Iklan Saya</a> serta <a href="https://policies.google.com/privacy?hl=id">Kebijakan Privasi Google</a>.</p>
 <p><strong>Pengaduan.</strong> Silakan menulis kepada kami lebih dulu. Anda juga dapat mengadu ke regulator: di Indonesia, lembaga pelindungan data pribadi setelah lembaga itu dibentuk dan, sampai saat itu, Kementerian Komunikasi dan Digital (Komdigi); di Eropa, otoritas pelindungan data di tempat tinggal Anda.</p>
 
